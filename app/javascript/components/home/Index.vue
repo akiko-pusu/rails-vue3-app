@@ -18,18 +18,19 @@
 </template>
 
 <script>
+import { toRefs } from 'vue'
+
 export default {
-  data() {
-    return {
-      ...this.initialData
-    }
-  },
   props: {
     initialData: {
       type: Object,
       default: () => {}
     }
   },
+  setup(props) {
+    const { title, description, contents } = toRefs(props.initialData)
+    return { title, description, contents }
+  }
 };
 </script>
 
