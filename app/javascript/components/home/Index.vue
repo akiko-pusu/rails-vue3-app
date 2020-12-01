@@ -19,17 +19,15 @@
 
 <script>
 export default {
+  data() {
+    return {
+      ...this.initialData
+    }
+  },
   props: {
     initialData: {
       type: Object,
       default: () => {}
-    }
-  },
-  data() {
-    return {
-      title: this.initialData.title,
-      description: this.initialData.description,
-      contents: this.initialData.contents
     }
   },
 };
